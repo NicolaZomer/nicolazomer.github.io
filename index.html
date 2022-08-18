@@ -321,9 +321,15 @@
 					showDivs(slideIndex=tmp);
 				})
 
-				maxheight = get_Height()
+				maxheight = get_Height();
 				showDivs(slideIndex=1);
 
+				window.onload = function() {
+				    if(!window.location.hash) {
+				        window.location = window.location + '#loaded';
+				        window.location.reload();
+				    }
+				}
 
 				// window.addEventListener('resize', () => {
 				// 	// location.reload();
