@@ -304,25 +304,28 @@
 					x[slide_tmp-1].style.height = "auto"; 
 					x[slide_tmp-1].style.display = "block";
 					
-					return(x[slide_tmp-1].getBoundingClientRect()['height'])
+					var myheight=x[slide_tmp-1].getBoundingClientRect().height
+					return(myheight)
 				}
-				
+
 				function get_Height(){
 					maxheight_new = 0;
 					for (j = 1; j<4; j++) {
 						tmp = getHeight_n(j);
-						if (tmp>maxheight_new){maxheight_new=Math.round(tmp)};
+						if (tmp>maxheight_new){maxheight_new=tmp};
 					}	
-					return(maxheight_new)
+					return(Math.round(maxheight_new))
 				}
 				window.addEventListener('resize', () => {
 					tmp = slideIndex;
 					maxheight = get_Height()
 					showDivs(slideIndex=tmp);
 				})
-
-				maxheight = get_Height();
-				showDivs(slideIndex=1);
+				
+				window.onload = function () {
+					maxheight = get_Height();
+					showDivs(slideIndex=1);
+				};
 
 				// window.addEventListener('resize', () => {
 				// 	// location.reload();
@@ -351,8 +354,9 @@
 					dots[i].className = dots[i].className.replace(" demo-red", "");
 				  }
 				  x[slideIndex-1].style.display = "block";
-				  x[slideIndex-1].style.height = maxheight.toString()+"px"+"+0em"
-				  border[0].style.height = (1.1*maxheight).toString()+"px"
+				  x[slideIndex-1].style.visibility = "visible"
+				  x[slideIndex-1].style.height = maxheight.toString()+"px";
+				  border[0].style.height = (1.1*maxheight).toString()+"px";
 				  dots[slideIndex-1].className += " demo-red";
 
 				}
