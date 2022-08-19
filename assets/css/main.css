@@ -1849,7 +1849,7 @@ button,
     .scene .middle-border{
       max-height: 1px;
       max-width: none;
-      width: 95%;
+      width: 90%;
       }
     .scene .right-zone{
       width: calc(100%);

@@ -77,7 +77,7 @@
 										</div>
 										<div class="col-6 col-12-small">
 											<div class="box">
-											<h3>Second year courses (in progress)</h3>
+											<h3>Second year courses (starting from October)</h3>
 											<ul class="customIndent">
 												<li>Information Theory and Inference </li>
 												<li>Neural Networks and Deep Learning</li>
@@ -324,13 +324,6 @@
 				maxheight = get_Height();
 				showDivs(slideIndex=1);
 
-				window.onload = function() {
-				    if(!window.location.hash) {
-				        window.location = window.location + '#loaded';
-				        window.location.reload();
-				    }
-				}
-
 				// window.addEventListener('resize', () => {
 				// 	// location.reload();
 				// 	$("#right-zone").html($("#right-zone").html());
@@ -358,7 +351,7 @@
 					dots[i].className = dots[i].className.replace(" demo-red", "");
 				  }
 				  x[slideIndex-1].style.display = "block";
-				  x[slideIndex-1].style.height = maxheight.toString()+"px"
+				  x[slideIndex-1].style.height = maxheight.toString()+"px"+"+0em"
 				  border[0].style.height = (1.1*maxheight).toString()+"px"
 				  dots[slideIndex-1].className += " demo-red";
 
