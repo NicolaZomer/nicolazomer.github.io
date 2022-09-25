@@ -333,9 +333,8 @@
 					return(maxheight_new)
 				}
 				window.addEventListener('resize', () => {
-					tmp = slideIndex;
 					maxheight = get_Height()
-					showDivs(slideIndex=tmp);
+					showDivs(slideIndex);
 				})
 
 				maxheight = get_Height()
