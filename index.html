@@ -101,9 +101,11 @@
 									<div class="scene">
 										<div class="left-zone">
 											<ul>
-												<li><a class="demo overline-from-left" onclick="currentDiv(1)">OxML Summer School 2022</a></li>
-												<li><a class="demo overline-from-left" onclick="currentDiv(2)">Alba CubeSat Unipd</a></li>
-												<li><a class="demo overline-from-left" onclick="currentDiv(3)">Private Tutor</a></li>
+												<li><a class="demo overline-from-left" onclick="currentDiv(1)">Mentee at LeadTheFuture</a></li>
+												<li><a class="demo overline-from-left" onclick="currentDiv(2)">Workshop "Physics of Machine Learning"</a></li>
+												<li><a class="demo overline-from-left" onclick="currentDiv(3)">OxML Summer School 2022</a></li>
+												<li><a class="demo overline-from-left" onclick="currentDiv(4)">Alba CubeSat Unipd</a></li>
+												<li><a class="demo overline-from-left" onclick="currentDiv(5)">Private Tutor</a></li>
 											</ul>
 										</div>
 										<div class="middle-border">
@@ -111,10 +113,25 @@
 										</div>
 										<div class="right-zone">
 											<section class="mySlides" id="1">
+												<img class="icona" src="images/certifications/ldf.jfif" alt="" ></img>
+												<h3>Mentee at LeadTheFuture</h3>
+												<h5>Lead The Future Mentorship</h5>
+												<h5>Sep 2022 - Present </h5>
+												<p>Among the few Italian students selected to be mentees for LeadTheFuture, a leading mentorship non-profit organization for students in STEM, with acceptance rate below 20%. LeadTheFuture empowers top-performing students to achieve their goals and contribute to their communities by giving them one-on-one guidance from high-impact mentors coming from the world's leading STEM innovation hubs such as Silicon Valley and CERN.</p>
+											</section>
+											<section class="mySlides" id="2">
+												<img class="iconabig" src="images/certifications/pod.jfif" alt="" ></img>
+												<h3>Workshop "Physics of Machine Learning"</h3>
+												<h5>Physics of Data - UNIPD</h5>
+												<h5>Sep 2022 · 3 days</h5>
+												<p>Statistical Artificial Intelligence or Machine Learning is deeply transforming our society and having a relevant impact in several fields including: 1) in the sciences there is growing interest in the predictive ability of models based on the analysis of big data; 2) in the economic sphere, digital transformation (i.e. the process of integrating digital technologies into all aspects of business), is leading to substantial changes at the level of technology and value generation; 3) in social life also promoting customs, habits, and behavioral patterns.</p>
+												<p>A big issue is that today some of the most accurate models in the Machine Learning world are what we call a ‘black box’ model as they lack explicability and interpretability. As Physicists, this is one of the most exciting challenges and that is why this 3 days Physics of Data Workshop was devoted to this topic, inviting world class experts and young researchers in this field, providing an overview of the possible open problems and research paths in this field.</p>
+											</section>
+											<section class="mySlides" id="3">
 												<img class="icona" src="images/certifications/oxford.jpg" alt="" ></img>
 												<h3>Oxford Machine Learning Summer School 2022</h3>
 												<h5>University of Oxford</h5>
-												<h5>Aug 2021 · 1 mo</h5>
+												<h5>Aug 2021 · 2 weeks</h5>
 												<blockquote>OxML 2022 covers some of the most important topics in ML/DL that the field is showing a growing interest in (e.g., statistical/probabilistic ML, representation learning, reinforcement learning, causal inference, vision & NLP, geometrical DL, ...) and their applications in sustainable development goals (SDGs, or Global Goals).</blockquote>
 												<p>The school program consisted of two tracks, Machine Learning for Health and Machine Learning for Finance, plus an optional module on Machine Learning Foundamentals. In addition to the lectures, the school included 2 workshops:
 													<ul class="customIndent">
@@ -124,7 +141,7 @@
 												</p>
 												<a href="images/certifications/OxML_2022_Certificate_of_participation_Nicola_Zomer.pdf" class="button icon solid fa-download" download>Certificate of participation</a>
 											</section>
-											<section class="mySlides" id="2">
+											<section class="mySlides" id="4">
 												<img class="icona" src="images/certifications/alba.jpg" alt="" ></img>
 												<h3>Member of the Mission Analysis team</h3>
 												<h5>Alba CubeSat Unipd</h5>
@@ -132,10 +149,10 @@
 												<p>Alba Cubesat is a team of students who, followed by professors from the University of Padua, aim to design, build and send a CubeSat into orbit, joining the "Fly Your Satellite" Program, promoted by the ESA Education Office.</p>
 												<p>Guided by the needs of the other subgroups (Payloads, EPS, TTC&OBC, ...), the task of my team was to study the orbit and the space environment, using tools such as Matlab, Spenvis, Master and Drama by ESA. More in detail, some of our tasks were to determine the orbital parameters, estimate the life time, and perform the risk assessment, both in orbit from radiation and debris and during the return in the atmosphere. On top of this, we also dealt with the definition of the Mission Phases and the realisation of the Ground Segment. To achieve such difficult results, we held weekly alignment meetings both within the individual teams and among the team leaders .</p>
 											</section>
-											<section class="mySlides" id="3">
+											<section class="mySlides" id="5">
 												<h3>Private Tutor (math and physics)</h3>
 												<h5>Self-Employed</h5>
-												<h5>2017 - Present · 5 yrs 8 mos</h5>
+												<h5>2017 - Present</h5>
 												<p>Since high school I have been working as a private teacher, mainly for high school students, in order to challenge myself and gain some financial independence during my studies.</p>
 												<p>Through this experience I enhanced my communication skills and the ability to explain mathematical/physical concepts to others.</p>
 											</section>
@@ -229,12 +246,12 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search
+							<!-- Search -->
 								<section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
-								</section> -->
+								</section>
 
 							<!-- Menu -->
 								<nav id="menu">
@@ -305,28 +322,25 @@
 					x[slide_tmp-1].style.height = "auto"; 
 					x[slide_tmp-1].style.display = "block";
 					
-					var myheight=x[slide_tmp-1].getBoundingClientRect().height
-					return(myheight)
+					return(x[slide_tmp-1].getBoundingClientRect()['height'])
 				}
-
+				
 				function get_Height(){
 					maxheight_new = 0;
-					for (j = 1; j<4; j++) {
+					for (j = 1; j<6; j++) {
 						tmp = getHeight_n(j);
-						if (tmp>maxheight_new){maxheight_new=tmp};
+						if (tmp>maxheight_new){maxheight_new=Math.round(tmp)};
 					}	
-					return(Math.round(maxheight_new))
+					return(maxheight_new)
 				}
 				window.addEventListener('resize', () => {
-					tmp = slideIndex;
 					maxheight = get_Height()
-					showDivs(slideIndex=tmp);
+					showDivs(slideIndex);
 				})
-				
-				window.onload = function () {
-					maxheight = get_Height();
-					showDivs(slideIndex=1);
-				};
+
+				maxheight = get_Height()
+				showDivs(slideIndex=1);
+
 
 				// window.addEventListener('resize', () => {
 				// 	// location.reload();
@@ -355,9 +369,8 @@
 					dots[i].className = dots[i].className.replace(" demo-red", "");
 				  }
 				  x[slideIndex-1].style.display = "block";
-				  x[slideIndex-1].style.visibility = "visible"
-				  x[slideIndex-1].style.height = maxheight.toString()+"px";
-				  border[0].style.height = (1.1*maxheight).toString()+"px";
+				  x[slideIndex-1].style.height = maxheight.toString()+"px"
+				  border[0].style.height = (1.1*maxheight).toString()+"px"
 				  dots[slideIndex-1].className += " demo-red";
 
 				}
