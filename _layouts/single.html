@@ -36,6 +36,44 @@ layout: default
         
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% elsif page.collection == 'publications' %}
+          <!-- <div style="margin-bottom: 0.9em; margin-top: 0em"> {{ page.authors }}<br/>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }}</div> -->
+          <div style="margin-top: 0em; margin-bottom: 0.2em"> {{ page.authors }}</div><div style="margin-bottom: 0.9em" >Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }}</div>
+          {% if page.preprinturl %}
+              <a href="{{ page.preprinturl }}" target="_blank" class="btn btn-primary">Preprint</a>
+          {% endif %}
+          {% if page.paperurl %}
+              <a href="{{ page.paperurl }}" target="_blank" class="btn btn-primary">PDF</a>
+          {% endif %}
+          {% if page.code %}
+              <a href="{{ page.code }}" target="_blank" class="btn btn-primary">Code</a>
+          {% endif %}
+          {% if page.doi %}
+              <a href="{{ page.doi }}" target="_blank" class="btn btn-primary">DOI</a>
+          {% endif %}
+          {% if page.image_name %}
+              <div style="margin-top: 0em; margin-bottom: 2em"> </div>
+              <p align="center">
+                <img src="{{ base_path }}/publications/{{ page.image_name }}" width="75%" style="border-radius: 0.375em"/>
+              </p>
+          {% endif %}
+          <h2>Abstract</h2>
+        {% elsif page.collection == 'projects' %}
+          <!-- <div style="margin-bottom: 0.9em; margin-top: 0em"> {{ page.authors }}<br/>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }}</div> -->
+          <div style="margin-top: 0em; margin-bottom: 0.4em"> {{ page.authors }}</div>
+          <!-- <div class="page__meta" style="margin-bottom: 0.9em"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ page.date | date: '%B %d, %Y' }}</div> -->
+          <div class="page__date" style="margin-bottom: 0.9em"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></div>
+          {% if page.repourl %}
+              <a href="{{ page.repourl }}" target="_blank" class="btn btn-primary">Read more</a>
+          {% endif %}
+          {% if page.image_name %}
+              <div style="margin-top: 0em; margin-bottom: 1.5em"> </div>
+              <p align="center">
+                <img src="{{ base_path }}/projects/{{ page.image_name }}" width="75%" style="border-radius: 0.375em;"/>
+              </p>
+              <div style="margin-top: 0em; margin-bottom: -0.5em"> </div>
+          {% endif %}
+          <h2>Description</h2>
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}

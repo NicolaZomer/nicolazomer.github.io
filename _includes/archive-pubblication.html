@@ -1,0 +1,63 @@
+{% include base_path %}
+
+<!-- {% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %} -->
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    <!-- {% if include.type == "grid" and teaser %}
+      <div class="archive__item-teaser">
+        <img src=
+          {% if teaser contains "://" %}
+            "{{ teaser }}"
+          {% else %}
+            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+          {% endif %}
+          alt="">
+      </div>
+    {% endif %} -->
+
+    <h2 class="archive__item-title" itemprop="headline">
+      <i class="fa fa-file-lines" aria-hidden="true" title="permalink"></i><a href="{{ base_path }}{{ post.url }}" rel="permalink" style="margin-left: 0.5em;">{{ title }}</a>
+    </h2>
+    
+    <!-- {% if post.read_time %}
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
+    {% endif %} -->
+    
+    <div style="margin-bottom: 0.4em; margin-top: 0em">{{ post.authors }}<br/>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </div>
+
+    <!-- {% if post.excerpt and site.read_more != 'enabled' %}
+    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+    {% elsif post.excerpt and site.read_more == 'enabled' %}
+    <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
+    {% endif %} -->
+    
+    <!-- {% if post.citation %}
+      <p>Recommended citation: {{ post.citation }}</p>
+    {% endif %} -->
+
+    {% if post.preprinturl %}
+        <a href="{{ post.preprinturl }}" target="_blank" class="btn btn-primary" style="text-decoration:none">Preprint</a>
+    {% endif %}
+    {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" target="_blank" class="btn btn-primary" style="text-decoration:none">PDF</a>
+    {% endif %}
+    {% if post.code %}
+        <a href="{{ post.code }}" target="_blank" class="btn btn-primary" style="text-decoration:none">Code</a>
+    {% endif %}
+    {% if post.doi %}
+        <a href="{{ post.doi }}" target="_blank" class="btn btn-primary" style="text-decoration:none">DOI</a>
+    {% endif %}
+
+  </article>
+</div>
