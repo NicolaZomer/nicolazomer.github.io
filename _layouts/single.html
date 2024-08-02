@@ -62,7 +62,7 @@ layout: default
           <!-- <div style="margin-bottom: 0.9em; margin-top: 0em"> {{ page.authors }}<br/>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }}</div> -->
           <div style="margin-top: 0em; margin-bottom: 0.4em"> {{ page.authors }}</div>
           <!-- <div class="page__meta" style="margin-bottom: 0.9em"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ page.date | date: '%B %d, %Y' }}</div> -->
-          <div class="page__date" style="margin-bottom: 0.9em"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Last update:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></div>
+          <div class="page__date" style="margin-bottom: 0.9em"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true" style="margin-right: 0.2em;"></i>Last update:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></div>
           {% if page.repourl %}
               <a href="{{ page.repourl }}" target="_blank" class="btn btn-primary">Read more</a>
           {% endif %}
