@@ -5,7 +5,7 @@ collection: projects
 permalink: /project/2023-02-11-3d-objects-classification
 date: 2023-02-11
 image_name: "2023-02-11-objects.png"
-repourl: 'https://github.com/NicolaZomer/3d-objects-classification'
+repourl: 'https://github.com/NicolaZomer/3D-Object-Classification'
 fa_icon: "fa-car"
 ---
 
