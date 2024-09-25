@@ -24,11 +24,11 @@ author:
   avatar           : "avatar.jpg"
   name             : "Nicola Zomer"
   pronouns         : # example: "she/her"  
-  bio              : "Incoming PhD student in Mathematics and ICT"
+  bio              : "Incoming PhD student in Applied Data Science and AI"
   location         : #"Earth"
   employer         : #"Red Brick University"
   uri              : # URL
-  email            : "nicola.zomer@studenti.unipd.it" 
+  email            : "nicola.zomer@marine-weather.com" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
