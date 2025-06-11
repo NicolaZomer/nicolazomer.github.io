@@ -18,8 +18,19 @@ author_profile: true
     margin: 2.5em 0 2em -3em;
     /* width: calc(100% + 3em);  */
 }
-    .features h2 { 
-      margin: 0em 0em 1.75em 2.45em; }
+    .features h2 {
+      -moz-align-items: center;
+      -webkit-align-items: center;
+      -ms-align-items: center;
+      align-items: center;
+      display: -moz-flex;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      margin: 0 0 1.75em 2.45em;       /* match article's left margin */
+      position: relative;
+      width: calc(100% - 2.45em);      /* same width calc */
+    }
     .features h3 { 
       margin: 0 0 0.3em 0; }
     .features article {
@@ -93,6 +104,10 @@ author_profile: true
       .features {
         margin: 0 0 2em 0;
         width: 100%; }
+        .features h2 {
+          margin-left: 0;             /* no sidebar on smaller screens */
+          width: 100%;                /* full width */
+        }
         .features article {
           margin: 0 0 3em 0;
           width: 100%; }
@@ -120,6 +135,10 @@ author_profile: true
     @media screen and (max-width: 480px) {
       .features {
         margin-top: 1.5em;
+      }
+      .features h2 {
+        margin-top: 1.5em;          /* to match features margin-top */
+        /* you can add further style tweaks if needed */
       }
       .features article .icon {
           height: 0em;
