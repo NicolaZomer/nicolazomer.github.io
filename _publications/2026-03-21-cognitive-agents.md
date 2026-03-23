@@ -2,8 +2,8 @@
 title: "Unraveling the emergence of collective behavior in networks of cognitive agents"
 authors: "Nicola Zomer & Manlio De Domenico"
 collection: publications
-permalink: /publication/2025-03-21-cognitive-agents
-date: 2025-03-21
+permalink: /publication/2026-03-21-cognitive-agents
+date: 2026-03-21
 image_name: "2026-03-21-gen-overview.png"
 venue: "npj Artificial Intelligence"
 paperurl: "https://doi.org/10.1038/s44387-026-00091-5"
