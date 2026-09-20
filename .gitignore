@@ -1,5 +1,6 @@
-# Ignore the contents of the _site directory
+# Ignore the contents of the _site directory and other cache directories
 _site/
+.sass-cache/
 
 # Ignore the directory for local files during development
 local/
@@ -7,25 +8,16 @@ local/
 # Ignore the Gemfile that is generated
 Gemfile.lock
 
-# Vendor
-vendor/
-.bundle/
-
-# Ingore files created by npm
+# Ignore files created by npm
 node_modules
 package-lock.json
 
-# Template pages
-_pages/archive-layout-with-content.md
-_pages/category-archive.html
-_pages/collection-archive.html
-_pages/markdown.md
-_pages/page-archive.html
-_pages/portfolio.html
-_pages/talkmap.html
-_pages/talks.html
-_pages/teaching.html
+# Ignore the vendor file at root level and bundle for alternative installation
+/vendor/
+.bundle/
 
+# Ignore folders related to IDEs
+.vscode/
 
-# Mac files
+# Ignore files created by MacOS
 .DS_Store

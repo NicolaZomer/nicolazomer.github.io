@@ -28,7 +28,7 @@ layout: default
         <header>
           {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
           {% if page.read_time %}
-            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
+            <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
         {% if page.modified %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
@@ -37,7 +37,6 @@ layout: default
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.collection == 'publications' %}
-          <!-- <div style="margin-bottom: 0.9em; margin-top: 0em"> {{ page.authors }}<br/>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }}</div> -->
           <div style="margin-top: 0em; margin-bottom: 0.2em"> {{ page.authors }}</div><div style="margin-bottom: 0.9em" >Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }}</div>
           {% if page.preprinturl %}
               <a href="{{ page.preprinturl }}" target="_blank" class="btn btn-primary">Preprint</a>
@@ -54,14 +53,12 @@ layout: default
           {% if page.image_name %}
               <div style="margin-top: 0em; margin-bottom: 2em"> </div>
               <p align="center">
-                <img src="{{ base_path }}/publications/{{ page.image_name }}" width="75%" style="border-radius: 0.375em"/>
+                <img src="{{ base_path }}/publications/{{ page.image_name }}" width="75%" style="border-radius: 0.375em; background: #fff; padding: 0.5em; box-sizing: border-box"/>
               </p>
           {% endif %}
           <h2>Abstract</h2>
         {% elsif page.collection == 'projects' %}
-          <!-- <div style="margin-bottom: 0.9em; margin-top: 0em"> {{ page.authors }}<br/>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }}</div> -->
           <div style="margin-top: 0em; margin-bottom: 0.4em"> {{ page.authors }}</div>
-          <!-- <div class="page__meta" style="margin-bottom: 0.9em"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ page.date | date: '%B %d, %Y' }}</div> -->
           <div class="page__date" style="margin-bottom: 0.9em"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true" style="margin-right: 0.2em;"></i>Last update:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></div>
           {% if page.repourl %}
               <a href="{{ page.repourl }}" target="_blank" class="btn btn-primary">Read more</a>
@@ -69,7 +66,7 @@ layout: default
           {% if page.image_name %}
               <div style="margin-top: 0em; margin-bottom: 1.5em"> </div>
               <p align="center">
-                <img src="{{ base_path }}/projects/{{ page.image_name }}" width="75%" style="border-radius: 0.375em;"/>
+                <img src="{{ base_path }}/projects/{{ page.image_name }}" width="75%" style="border-radius: 0.375em; background: #fff; padding: 0.5em; box-sizing: border-box"/>
               </p>
               <div style="margin-top: 0em; margin-bottom: -0.5em"> </div>
           {% endif %}
@@ -78,23 +75,37 @@ layout: default
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-        {% endif %}    
+        {% endif %}
         </header>
       {% endunless %}
 
       <section class="page__content" itemprop="text">
         {{ content }}
 
-        {% if page.citation and page.paperurl and page.slidesurl %}
+        {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
+          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+        {% elsif page.citation and page.paperurl and page.slidesurl %}
           <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
+        {% elsif page.citation and page.paperurl and page.bibtexurl %}
+          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
         {% elsif page.citation and page.paperurl %}
           <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a></p>
+        {% elsif page.citation and page.slidesurl and page.bibtexurl %}
+          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
         {% elsif page.citation and page.slidesurl %}
           <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
+        {% elsif page.slidesurl and page.bibtexurl %}
+          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+        {% elsif page.paperurl and page.bibtexurl %}
+          <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+        {% elsif page.citation and page.bibtexurl %}
+          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
         {% elsif page.citation %}
           <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
         {% elsif page.slidesurl %}
           <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
+        {% elsif page.bibtexurl %}
+          <p style="font-size: smaller"><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}

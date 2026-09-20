@@ -1,15 +1,23 @@
+---
+layout: none
+permalink: /images/manifest.json
+---
 {
-	"name": "Minimal Mistakes",
+	"name": {{ site.title | jsonify }},
+	"short_name": {{ site.name | jsonify }},
+	"description": {{ site.description | jsonify }},
+	"start_url": "{{ site.baseurl | default: '/' }}",
+	"lang": {{ site.locale | default: "en" | jsonify }},
 	"icons": [
 		{
-			"src": "\/images\/android-chrome-192x192.png?v=M44lzPylqQ",
+			"src": "/images/favicon-192x192.png",
 			"sizes": "192x192",
-			"type": "image\/png"
+			"type": "image/png"
 		},
 		{
-			"src": "\/images\/android-chrome-512x512.png?v=M44lzPylqQ",
+			"src": "/images/favicon-512x512.png",
 			"sizes": "512x512",
-			"type": "image\/png"
+			"type": "image/png"
 		}
 	]
 }

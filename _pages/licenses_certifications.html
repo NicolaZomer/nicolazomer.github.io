@@ -177,6 +177,23 @@ author_profile: true
     @media screen and (max-width: 480px) {
       .features article .icon:before {
         font-size: 1.25rem; } }
+
+    /* Give logo images a white backdrop so transparent PNGs (e.g. UniPD, ICTP)
+       stay legible in dark mode. */
+    .features article img.icon {
+      background: #fff;
+      padding: 0.35em;
+      border-radius: 0.375em;
+      box-sizing: border-box;
+      object-fit: contain; }
+
+    /* On mobile the logos collapse to zero width/height; without this the
+       leftover white padding shows as a small dot. Placed after the rule above
+       so it wins by source order. */
+    @media screen and (max-width: 480px) {
+      .features article img.icon {
+        padding: 0;
+        background: transparent; } }
 </style>
 
 <div class="features">
