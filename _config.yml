@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Nicola Zomer"
 title_separator          : "-"
 name                     : &name "Nicola Zomer"
-description              : &description "Research engineer in applied data science and AI"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "PhD student in data-driven ship route optimization"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://nicolazomer.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,7 +26,7 @@ author:
   avatar           : "avatar.jpg"
   name             : "Nicola Zomer"
   pronouns         : # example: "she/her"
-  bio              : "Research engineer in applied data science and AI"
+  bio              : "PhD student in data-driven ship route optimization"
   location         : #"Earth"
   employer         : #"Red Brick University"
   uri              : # URL
